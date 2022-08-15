@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+:root {
+    --primary-color: #2c2b29;
+    --title-color: #92b643;
+    --secundary-color: #C8C8C8;
+    --background-color: #111;
+    --background-secundary-color: #2c2b29;
+
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+body {
+    
+    font-family: 'Roboto', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: light;
+    display: grid;
+    margin: 0;
+    height: 100vh;
+    grid-template-areas: 
+        "aside main"
+    ;
+
+    grid-template-rows: 1fr;
+    grid-template-columns: 320px 1fr;
+
+    background: var(--background-color);
+    
+    justify-content: center;
+
+}
+a {
+    color: #92b643;
+}
+a :visited{
+    color: #92b643;
+}
+header {
+    font-size: 47px;
+    color: var(--title-color);
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#profission {
+    color: #C8C8C8;
+    margin-left: 69px;
+    margin-top: 10px;
+}
+
+main {
+    grid-area: main;
+    
+    background-color: var(--background-secundary-color);
+}
+
+#titles {
+    color: var(--primary-color); 
+    font-size: 20px;
+    display: block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    font-weight: bold;
+}
+
+#contact ul li {
+    margin-top: 22px;
+    margin-left: 20px;
+}
+
+#title-main {
+    color: var(--primary-color);
+    background-color: var(--title-color);
+    font-size: 20px;
+    width: 300px;
+    padding-left:30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+#p-main {
+    color: var(--secundary-color);
+    font-size: 14px;
+    text-align: justify;
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 30px;
+    letter-spacing: 1px;
+    line-height: 22px;
+}
+
+#contact {
+    margin-left: 16px;
+    width: 230px;
+    font-family: 'Roboto', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+#contact > .item {
+    display: flex;
+    margin-right: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+#contact img {
+    margin-right: 15px;
+    width: 30px;
+    
+}
+
+aside {
+    grid-area: aside;
+    background-color: #C8C8C8;
+
+ 
+}
+
+#photo {
+    width: 150px;
+    height: 150px;
+    background-color: #666;
+    border-radius: 90px;
+    border: 2px solid black;
+    margin: 10px auto;
+    background-image: url('imgs/lucasamaral.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150px;
+ 
+}
+
+
+  /* Timeline Container */
+  .timeline {
+    background: var(--primary-color);
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  /* Card container */
+  .card {
+    position: relative;
+    max-width: 400px;
+  }
+  
+  /* setting padding based on even or odd */
+  .card:nth-child(odd) {
+    padding: 30px 0 30px 30px;
+  }
+  .card:nth-child(even) {
+    padding: 30px 30px 30px 0;
+  }
+  /* Global ::before */
+  .card::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border: solid var(--title-color);
+  }
+  
+  /* Setting the border of top, bottom, left */
+  .card:nth-child(odd)::before {
+    left: 0px;
+    top: -4.5px;
+    bottom: -4.5px;
+    border-width: 5px 0 5px 5px;
+    border-radius: 50px 0 0 50px;
+  }
+  
+  /* Setting the border of top, bottom, right */
+  .card:nth-child(even)::before {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+  }
+  
+  /* Removing the border if it is the first card */
+  .card:first-child::before {
+    border-top: 0;
+    border-top-left-radius: 0;
+  }
+  
+  /* Removing the border if it is the last card  and it's odd */
+  .card:last-child:nth-child(odd)::before {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  /* Removing the border if it is the last card  and it's even */
+  .card:last-child:nth-child(even)::before {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  /* Information about the timeline */
+  .info {
+    display: flex;
+    flex-direction: column;
+    background: #333;
+    color: gray;
+  
+    padding: 10px;
+  }
+  
+  /* Title of the card */
+  .title {
+    color: var(--title-color);
+    position: relative;
+  }
+  
+  /* Timeline dot  */
+  .title::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 999px;
+    border: 3px solid var(--title-color);
+  }
+  
+  /* text right if the card is even  */
+  .card:nth-child(even) > .info > .title {
+    text-align: right;
+  }
+  
+  /* setting dot to the left if the card is odd */
+  .card:nth-child(odd) > .info > .title::before {
+    left: -45px;
+  }
+  
+  /* setting dot to the right if the card is odd */
+  .card:nth-child(even) > .info > .title::before {
+    right: -45px;
+  }
